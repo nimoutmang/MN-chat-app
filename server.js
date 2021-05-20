@@ -7,3 +7,8 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.static("public"));
 app.get("/", (req, res)=> res.send("Hello Project"))
+
+app.post('/user', (req, res)=>{
+    let user = req.body;
+    res.send(user)
+})
