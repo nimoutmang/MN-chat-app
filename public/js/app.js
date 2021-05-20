@@ -1,18 +1,4 @@
 
-// function requestItem(response){
-//     let items = response.data;
-//     const ul = document.querySelector('ul');
-//     if (ul !== null){
-//         ul.remove();
-//     }
-//     const newul = document.createElement('ul');
-//     for (let item of items){
-//         const li = document.createElement('li');
-//         li.textContent = ;
-//         newul.appendChild(li);
-//         document.body.appendChild(newul);
-//     }
-// }
 
 function displayMessage (event){
     const message = document.querySelector('#message').value;
