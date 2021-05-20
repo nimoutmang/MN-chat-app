@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/nimoutmang/MN-chat-app/issues"
   },
-  "homepage": "https://github.com/nimoutmang/MN-chat-app#readme"
+  "homepage": "https://github.com/nimoutmang/MN-chat-app#readme",
+  "dependencies": {
+    "nodemon": "^2.0.7"
+  }
 }
