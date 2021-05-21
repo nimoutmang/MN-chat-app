@@ -2,42 +2,36 @@ body{
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-}
-#box{
-    margin-left: 25%;
-    margin-right: 20%;
-    border-color:rgb(37, 139, 235);
-}
-.container{
-    width: 100%;
-}
-.img{
-    display: flex;
-    justify-content: center;
-}
-input[type=text] {
-    padding: 1%;
-    width: 50%;
-    margin-left: 20%;
-    margin-top: 10px;
-    background:rgb(37, 139, 235);
-}
-.login{
-    margin-left: 62%;
-}
-.input{
-    display: flex;
-    justify-content: center;
-    margin-top: 40%;
-}
-input[type=txt]{
-    padding: 10px;
-    width: 30%;
-    margin-right: 10px;
-   
+    background: rgb(238, 238, 200);
 }
 
-.main{
-    display: flex;
-    justify-content: center;
+.card{
+    margin-top: 10px;
+    width: 60%;
+    margin-left: 20%;
+}
+.input-text{
+    margin-left:25% ;
+    width: 60%;
+   
+}
+.btn-click{
+    background: rgb(106, 119, 245);
+    color: #fff;
+    width: 10%;
+    margin-left: 10px; 
+     
+}
+.input-group-prepend{
+    margin-left: 1%;
+}
+#message{
+    margin-left: 2%;
+    width: 55%;
+}
+
+#bolder, #italic, #underline{
+    font-weight: bolder;
+    cursor: pointer;
+  
 }

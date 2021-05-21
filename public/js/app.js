@@ -1,5 +1,3 @@
-
-
 function displayMessage (event){
     const message = document.querySelector('#message').value;
     const file = document.createElement('fieldset');
