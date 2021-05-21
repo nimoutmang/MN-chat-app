@@ -8,7 +8,24 @@ app.use(express.urlencoded());
 app.use(express.static("public"));
 app.get("/", (req, res)=> res.send("Hello Project"))
 
-app.post('/user', (req, res)=>{
-    let user = req.body;
-    res.send(user)
+// let users = [
+//     {id: 1, uersname: "molika", email: "kaka@123.com", password: "12345%"},
+//     {id: 1, uersname: "nimout", email: "nimout@123.com", password: "12345"}
+// ]
+
+let users = [
+    {id:1, username:"Unkow", message: "Hello!, How are you?"},
+    {id:2, username:"Unkow", message: "Yes I'm fine"}
+]
+app.get('/users', (req, res)=>{res.send(users)});
+
+app.post('/users',(req, res)=> {
+    user ={
+        id: users.length +1,
+        username: req.body.username,
+        message: req.body.message
+    }
+    users.push(user);
+    res.send(users);
+    console.log(req.body);
 })
