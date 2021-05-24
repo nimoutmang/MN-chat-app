@@ -40,7 +40,8 @@ function saveMessage() {
     let today = new Date();
     let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     let user = { uesername: "Unknown", message: message, time: time };
-    const url = "http://localhost:5000/users";
+    const url = "https://mn-chat-app.herokuapp.com/users"
+    // const url = "http://localhost:5000/users";
     axios
         .post(url, user)
         .then(displayMessage);
@@ -49,7 +50,8 @@ function saveMessage() {
 }
 
 function addMessage() {
-    const url = "http://localhost:5000/users";
+    const url = "https://mn-chat-app.herokuapp.com/users"
+    // const url = "http://localhost:5000/users";
     axios
         .get(url)
         .then(displayMessage)
