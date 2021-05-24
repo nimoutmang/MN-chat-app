@@ -1,26 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/app.js" defer></script>
+
 </head>
+
 <body>
     <div class="container">
-        <fieldset id="box">
-            <div class="main">
-                <ul>
-                </ul>
+        <div class="login">
+            <div class="card-login">
+                <div class="h1">
+                    <h1>MyLiveChat</h1>
+                </div>
+                <!-- <div class="image">
+                    <img src="image/logo.png" alt="logo">
+                </div> -->
+                <div class="input">
+                    <input type="text" id="username" placeholder="UserName"><br>
+                    <br>
+                    <input type="text" id="email" placeholder="Email"><br>
+                    <br>
+                    <input type="password" id="password" placeholder="Password">
+                </div><br>
+                <button type="button" id="btn-login">Login</button>
             </div>
-        </fieldset>
+        </div>
+        <div class="chat">
+            <div class="row">
+                <div class="col-3">
+                    <img src="image/user.png" alt="" width="100px" height="100px">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-success" type="submit"><i class="fa fa-search"
+                                    style="font-size:20px"></i></button>
+                        </div>
+                    </div>
+                    <div class="img">
+                        <img src="image/user.png" alt="" width="70px" height="70px">
+                        <span id="text">Nimout Mang</span>
+                    </div>
+                    <div class="img">
+                        <img src="image/user.png" alt="" width="70px" height="70px">
+                        <span id="text">Srey Am</span>
+                    </div>
+                    <div class="img">
+                        <img src="image/user.png" alt="" width="70px" height="70px">
+                        <span id="text">Vouchly</span>
+                    </div>
+                    <div class="img">
+                        <img src="image/user.png" alt="" width="70px" height="70px">
+                        <span id="text">Thaly</span>
+                    </div>
+                    
+                </div>
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="main">
+                                <ul></ul>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="bolder">B</span>
+                                    <span class="input-group-text" id="italic">I</span>
+                                    <span class="input-group-text" id="underline">U</span>
+                                </div>
+                                <input type="text" id="message" class="form-control">
+                                <div class="input-group-append">
+                                    <button class="btn btn-success" id="send" type="submit">Send</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <button id="btn-create" style="width: 50px; padding: 10px;background: teal;border: none;margin-left: 85%;"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <div class="input">
-        <input type="txt" id="message" placeholder="Aa">
-        <button id="send">Send</button>
-    </div>
+
 </body>
+
 </html>

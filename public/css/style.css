@@ -2,47 +2,71 @@ body{
     padding: 0;
     margin: 0;
     font-family: sans-serif;
+    background: rgb(3, 3, 87);
+    
 }
-#box{
-    margin-left: 25%;
-    margin-right: 20%;
-    border-color:rgb(37, 139, 235);
-    height: 70vh;
-}
-.container{
-    width: 100%;
-}
-.img{
-    display: flex;
-    justify-content: center;
-}
-input[type=text] {
-    padding: 1%;
+
+.card-login{
+    margin-top:5%;
+    border-style: solid 2px;
+    box-shadow: 1px 1px 3px rgb(51, 50, 50);
     width: 50%;
-    margin-left: 20%;
-    margin-top: 10px;
-    background:rgb(37, 139, 235);
+    height: 45vh;
+    margin-left: 25%;
+    background: rgb(46, 85, 156);
+    /* display: none; */
 }
-.login{
-    margin-left: 62%;
+.h1{
+    margin-left: 35%;
+    color:#eec;
+}
+.chat{
+    width: 90%;
+    /* display: none; */
 }
 .input{
-    display: flex;
-    justify-content: center;
-    margin-top: 1%;
-    margin-left: 20%;
+    margin-left: 10%;
 }
-input[type=txt]{
-    padding: 10px;
-    width: 40%;
-    margin-right: 10px;
+#username, #password, #email{
+    width: 70%;
+    background: rgb(34, 46, 70);
+    color: cornsilk;
+    border: none;
+    
+}
+#btn-login{
+    background: rgb(44, 103, 212);
+    border-color: darkcyan;
+    width: 30%;
+    margin-left: 43%;
 }
 #send{
     background: blue;
-    color: #fff;
 }
 
-.main{
-    display: flex;
-    justify-content: center;
+.chat{
+    width: 100%;
+    display: none;
+}
+.col-3{
+    background: teal;
+}
+
+#bolder, #italic, #underline{
+    font-weight: bolder;
+    cursor: pointer;
+}
+#search{
+    width: 200px;
+}
+.card{
+    height: 100vh;
+    
+}
+.card-body{
+    overflow: scroll;
+}
+#text{
+    color:#fff;
+    font-size: 20px;
 }
