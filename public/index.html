@@ -12,23 +12,57 @@
 </head>
 <body>
     <div class="container">
-        <div class="card">
-            <div class="card-body">
-                <div class="card bg-primary text-white">
-                    <div class="card-body"></div>
+            <div class="content">
+            <div class="h1"><h1>MyLiveChat</h1>
+            </div>
+            <!-- <div class="image">
+                <img src="image/logo.png" alt="logo">
+            </div> -->
+            <div class="input">
+                <input type="text" id="username" placeholder="UserName"><br>
+                <br>
+                <input type="text" id="email" placeholder="Email"><br>
+                <br>
+                <input type="password" id="password" placeholder="Password" >
+            </div><br>
+            <button id="btn-login">Login</button>xc                
+            <br>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <img src="image/user.png" alt="" width="100px" height="100px">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search">
+                <div class="input-group-append">
+                  <button class="btn btn-success" type="submit" ><i class="fa fa-search" style="font-size:20px"></i></button>
                 </div>
             </div>
         </div>
-    </div><br>
-    <div class="input-text">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="bolder">B</span>
-                <span class="input-group-text" id="italic">I</span>
-                <span class="input-group-text" id="underline">U</span>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="main">
+                        <ul></ul>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="bolder">B</span>
+                            <span class="input-group-text" id="italic">I</span>
+                            <span class="input-group-text" id="underline">U</span>
+                        </div>
+                        <input type="text" id="message" class="form-control">
+                        <div class="input-group-append">
+                            <button class="btn btn-success" id="send" type="submit">Send</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <input type="text" id="message" placeholder="Type a message">
-            <button class="btn-click">Send</button>
+        </div>
+        <div class="col-3">
         </div>
     </div>
 </body>

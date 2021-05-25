@@ -1,37 +1,36 @@
 body{
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-    background: rgb(238, 238, 200);
+    background: rgb(83, 83, 194);
+}
+.content{
+    margin-top:5%;
+    border-style: solid;
+    width: 50%;
+    height: 300%;
+    margin-left: 25%;
+    background: rgb(46, 85, 156);
+}
+.h1{
+    margin-left: 35%;
+    color:#eec;
+}
+/* .image{ */
+    /* width:10px
+} */
+.input{
+    margin-left: 10%;
+}
+#username, #password, #email{
+    width: 70%;
+    background: rgb(34, 46, 70);
+    color: cornsilk;
+    border: none;
+    
+}
+#btn-login{
+    background: rgb(159, 188, 241);
+    border-color: darkcyan;
+    width: 30%;
+    margin-left: 40%;
 }
 
-.card{
-    margin-top: 10px;
-    width: 60%;
-    margin-left: 20%;
-}
-.input-text{
-    margin-left:25% ;
-    width: 60%;
-   
-}
-.btn-click{
-    background: rgb(106, 119, 245);
-    color: #fff;
-    width: 10%;
-    margin-left: 10px; 
-     
-}
-.input-group-prepend{
-    margin-left: 1%;
-}
-#message{
-    margin-left: 2%;
-    width: 55%;
-}
 
-#bolder, #italic, #underline{
-    font-weight: bolder;
-    cursor: pointer;
-  
-}
