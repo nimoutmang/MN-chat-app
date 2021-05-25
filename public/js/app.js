@@ -45,7 +45,6 @@ function saveMessage() {
     axios
         .post(url, user)
         .then(displayMessage);
-    console.log(user)
 
 }
 

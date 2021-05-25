@@ -2,7 +2,8 @@ body{
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    background: rgb(3, 3, 87);
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuLqallQTsMJ8UYwo8pW6TQMJtMd2ZpwXG5A&usqp=CAU');
+    background-size: cover;
     
 }
 .input{
@@ -15,20 +16,20 @@ body{
     border: none;
     
 }
-#btn-login{
-    background: rgb(44, 103, 212);
-    border-color: darkcyan;
-    width: 30%;
-    margin-left: 43%;
+.card {
+    border-radius: 7px;
+    box-shadow: 1px 1px 5px rgb(51, 50, 50);
 }
 #send{
     background: blue;
 }
-
+#btn-login{
+    background: rgb(121, 19, 180);
+}
 .chat{
     width: 98%;
 }
-.col-3{
+#col-3{
     background: teal;
 }
 
@@ -39,11 +40,11 @@ body{
 #search{
     width: 200px;
 }
-.card{
+#card{
     height: 100vh;
     
 }
-.card-body{
+#card-body{
     overflow: scroll;
 }
 #text{
