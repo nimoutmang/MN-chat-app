@@ -1,25 +1,29 @@
 body{
-    background: rgb(83, 83, 194);
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    background: rgb(3, 3, 87);
+    
 }
-.content{
+
+/* .card-login{
     margin-top:5%;
-    border-style: solid;
+    border-style: solid 2px;
+    box-shadow: 1px 1px 3px rgb(51, 50, 50);
     width: 50%;
-    height: 300%;
+    height: 45vh;
     margin-left: 25%;
     background: rgb(46, 85, 156);
-}
+    /* display: none; */
+/* } */
 .h1{
     margin-left: 35%;
     color:#eec;
-}
-/* .image{ */
-    /* width:10px
-} */
+} 
 .input{
     margin-left: 10%;
 }
-#username, #password, #email{
+#username, #password{
     width: 70%;
     background: rgb(34, 46, 70);
     color: cornsilk;
@@ -27,10 +31,37 @@ body{
     
 }
 #btn-login{
-    background: rgb(159, 188, 241);
+    background: rgb(44, 103, 212);
     border-color: darkcyan;
     width: 30%;
-    margin-left: 40%;
+    margin-left: 43%;
+}
+#send{
+    background: blue;
 }
 
+.chat{
+    width: 98%;
+}
+.col-3{
+    background: teal;
+}
 
+#bolder, #italic, #underline{
+    font-weight: bolder;
+    cursor: pointer;
+}
+#search{
+    width: 200px;
+}
+.card{
+    height: 100vh;
+    
+}
+.card-body{
+    overflow: scroll;
+}
+#text{
+    color:#fff;
+    font-size: 20px;
+}
