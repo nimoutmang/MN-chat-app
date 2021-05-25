@@ -57,8 +57,8 @@ function addMessage() {
 }
 
 function btnShow() {
+    // let url = rootEndpoint;
     const url = "https://mn-chat-app.herokuapp.com/users";
-    let url = rootEndpoint;
     axios
         .get(url)
         .then(function(res){res(window.location.href = rootEndpoint + "/index.html")});
