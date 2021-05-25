@@ -57,6 +57,7 @@ function addMessage() {
 }
 
 function btnShow() {
+    const url = "https://mn-chat-app.herokuapp.com/users";
     let url = rootEndpoint;
     axios
         .get(url)
@@ -67,7 +68,7 @@ function btnShow() {
 // btnLogin.addEventListener('click',displaytext);
 
 const btnshow = document.querySelector('#btn-exit')
-const rootEndpoint = "http://localhost:5000";
+// const rootEndpoint = "http://localhost:5000";
 btnshow.addEventListener('click', btnShow);
 
 const btnLogin = document.querySelector('#send')
