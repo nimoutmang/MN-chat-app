@@ -57,18 +57,17 @@ function addMessage() {
 }
 
 function btnShow() {
-    // let url = rootEndpoint;
-    const url = "https://mn-chat-app.herokuapp.com/users";
+    let url = rootEndpoint;
     axios
         .get(url)
-        .then(function(res){res(window.location.href = url + "/index.html")});
+        .then(function(res){res(window.location.href = rootEndpoint + "/index.html")});
 
 }
 // const btnLogin = document.querySelector('#bolder')
 // btnLogin.addEventListener('click',displaytext);
 
 const btnshow = document.querySelector('#btn-exit')
-// const rootEndpoint = "http://localhost:5000";
+const rootEndpoint = "https://mn-chat-app.herokuapp.com";
 btnshow.addEventListener('click', btnShow);
 
 const btnLogin = document.querySelector('#send')
