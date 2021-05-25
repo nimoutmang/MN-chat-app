@@ -61,7 +61,7 @@ function btnShow() {
     const url = "https://mn-chat-app.herokuapp.com/users";
     axios
         .get(url)
-        .then(function(res){res(window.location.href = rootEndpoint + "/index.html")});
+        .then(function(res){res(window.location.href = url + "/index.html")});
 
 }
 // const btnLogin = document.querySelector('#bolder')
