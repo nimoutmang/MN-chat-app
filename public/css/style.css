@@ -1,0 +1,52 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    background: rgb(3, 3, 87);
+    
+}
+.input{
+    margin-left: 10%;
+}
+#username, #password{
+    width: 70%;
+    background: rgb(34, 46, 70);
+    color: cornsilk;
+    border: none;
+    
+}
+#btn-login{
+    background: rgb(44, 103, 212);
+    border-color: darkcyan;
+    width: 30%;
+    margin-left: 43%;
+}
+#send{
+    background: blue;
+}
+
+.chat{
+    width: 98%;
+}
+.col-3{
+    background: teal;
+}
+
+#bolder, #italic, #underline{
+    font-weight: bolder;
+    cursor: pointer;
+}
+#search{
+    width: 200px;
+}
+.card{
+    height: 100vh;
+    
+}
+.card-body{
+    overflow: scroll;
+}
+#text{
+    color:#fff;
+    font-size: 20px;
+}
