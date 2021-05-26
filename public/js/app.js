@@ -38,7 +38,7 @@ function saveMessage() {
     let today = new Date();
     let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     let user = { username: username, message: message, color: color, time: time };
-    const url = rootEndpoint+ "/users";
+    const url = rootEndpoint+ "/message";
     
     axios
         .post(url, user)
@@ -47,28 +47,31 @@ function saveMessage() {
 }
 
 function addMessage() {
-    const url =rootEndpoint+ "/users";
+    const url =rootEndpoint+ "/message";
     axios
         .get(url)
         .then(displayMessage)
 }
 
-function btnShow() {
-    let url = rootEndpoint;
-    axios
-        .get(url)
-        .then(function(res){res(window.location.href = rootEndpoint + "/index.html")});
-
+function logOut() {
+    localStorage.clear();
+    window.location.href = rootEndpoint + "/index.html";
 }
 // const btnLogin = document.querySelector('#bolder')
 // btnLogin.addEventListener('click',displaytext);
 
 const btnshow = document.querySelector('#btn-exit')
-const rootEndpoint = "https://mn-chat-app.herokuapp.com";
-btnshow.addEventListener('click', btnShow);
+const rootEndpoint = "http://localhost:5000";
+btnshow.addEventListener('click', logOut);
 
 const btnLogin = document.querySelector('#send')
 btnLogin.addEventListener('click', saveMessage);
-setInterval(addMessage, 1000);
+
+let isLogined = localStorage.length > 0;
+if (isLogined) {
+    setInterval(addMessage, 1000);
+}else{
+    window.location.href = rootEndpoint + "/index.html";
+}
 
 

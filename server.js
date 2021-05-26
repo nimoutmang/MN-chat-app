@@ -7,12 +7,17 @@ app.listen(process.env.PORT || 5000, () =>console.log("Server running..."));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.static("public"));
-app.get("/", (req, res)=> res.send("Hello Project"))
+
+
+let message = [
+    {id:1, username:"Molika", color: "pink", message: "Hello!, How are you?", time:"11:23:01"},
+    {id:2, username:"Nimout", color: "yellow", message: "Yes I'm fine", time:"11:23:01"}
+];
 
 let users = [
-    {id:1, username:"Molika", password: "123", color: "pink", message: "Hello!, How are you?", time:"11:23:01"},
-    {id:2, username:"Nimout", password:"123", color: "yellow", message: "Yes I'm fine", time:"11:23:01"}
-];
+    {id:1, username:"Molika", password:"123", color: "pink"},
+    {id:2, username:"Nimout", password:"123", color: "yellow"}
+]
 
 let icons = [
     {id: 1, icon: '😓', sign: '):'},
@@ -28,11 +33,11 @@ let icons = [
 ]
 app.get('/emoji', (req, res) => res.send(icons));
 
-app.get('/users', (req, res)=>{res.send(users)});
+app.get('/message', (req, res)=>{res.send(message)});
 
-app.post('/users',(req, res)=> {
+app.post('/message',(req, res)=> {
     user ={
-        id: users.length +1,
+        id: message.length +1,
         username: req.body.username,
         password:req.body.password,
         message: req.body.message,
@@ -40,7 +45,8 @@ app.post('/users',(req, res)=> {
         color: req.body.color
         
     }
-    users.push(user);
-    res.send(users);
+    message.push(user);
+    res.send(message);
 });
 
+app.get('/users', (req, res)=> {res.send(users)});
