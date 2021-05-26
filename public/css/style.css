@@ -33,7 +33,7 @@ body{
     background: teal;
 }
 
-#bolder, #italic, #underline{
+#bolder, #italic, #underline, #emoji{
     font-weight: bolder;
     cursor: pointer;
 }

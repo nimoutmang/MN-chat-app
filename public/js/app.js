@@ -28,9 +28,7 @@ function displayMessage(response) {
         newul.appendChild(li);
         newul.appendChild(span3);
         main.appendChild(newul);
-
     }
-
 }
 
 function saveMessage() {
@@ -40,17 +38,16 @@ function saveMessage() {
     let today = new Date();
     let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     let user = { username: username, message: message, color: color, time: time };
-    const url = "https://mn-chat-app.herokuapp.com/users";
-    // const url = "http://localhost:5000/users";
+    const url = rootEndpoint+ "/users";
+    
     axios
         .post(url, user)
         .then(displayMessage);
-
+    document.querySelector('#message').value= "";
 }
 
 function addMessage() {
-    const url = "https://mn-chat-app.herokuapp.com/users";
-    // const url = "http://localhost:5000/users";
+    const url =rootEndpoint+ "/users";
     axios
         .get(url)
         .then(displayMessage)
@@ -72,6 +69,6 @@ btnshow.addEventListener('click', btnShow);
 
 const btnLogin = document.querySelector('#send')
 btnLogin.addEventListener('click', saveMessage);
+setInterval(addMessage, 1000);
 
-addMessage();
 
