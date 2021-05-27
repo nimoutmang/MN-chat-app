@@ -26,3 +26,9 @@ let login = (e) =>{
 const btnLogin = document.querySelector('#btn-login');
 const rootEndpoint = "http://localhost:5000";
 btnLogin.addEventListener('click', login);
+
+
+let isLogined = localStorage.length > 0;
+if (isLogined) {
+    window.location.href = rootEndpoint + "/chat.html";
+}
