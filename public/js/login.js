@@ -24,7 +24,7 @@ let login = (e) =>{
 
 
 const btnLogin = document.querySelector('#btn-login');
-const rootEndpoint = "http://localhost:5000";
+const rootEndpoint = "https://mn-chat-app.herokuapp.com";
 btnLogin.addEventListener('click', login);
 
 

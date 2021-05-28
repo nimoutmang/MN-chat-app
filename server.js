@@ -18,7 +18,7 @@ let users = [
     {id:1, username:"Molika", password:"123", color: "pink", img: "image/v.jpg"},
     {id:2, username:"Nimout", password:"123", color: "yellow", img: "image/N.png"},
     {id:3, username:"Thaly", password:"123", color: "blue", img: "image/thaly.png"},
-    {id:4, username:"Sophanna", password:"123", color: "blue", img: "image/sana.png"},
+    {id:4, username:"Sophanna", password:"123", color: "teal", img: "image/sana.png"},
 ]
 
 

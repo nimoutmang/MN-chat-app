@@ -102,7 +102,7 @@ function search (){
 // btnLogin.addEventListener('click',displaytext);
 
 const btnshow = document.querySelector('#btn-exit')
-const rootEndpoint = "http://localhost:5000";
+const rootEndpoint = "https://mn-chat-app.herokuapp.com";
 btnshow.addEventListener('click', logOut);
 
 const btnLogin = document.querySelector('#send') 

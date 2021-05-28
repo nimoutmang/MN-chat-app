@@ -39,5 +39,5 @@ function requestUser () {
 
 const div = document.querySelector('#col-3');
 
-const rootEndpoints = "http://localhost:5000";
+const rootEndpoints = "https://mn-chat-app.herokuapp.com";
 requestUser();
