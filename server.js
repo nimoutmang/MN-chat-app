@@ -15,23 +15,12 @@ let message = [
 ];
 
 let users = [
-    {id:1, username:"Molika", password:"123", color: "pink"},
-    {id:2, username:"Nimout", password:"123", color: "yellow"}
+    {id:1, username:"Molika", password:"123", color: "pink", img: "image/v.jpg"},
+    {id:2, username:"Nimout", password:"123", color: "yellow", img: "image/N.png"},
+    {id:3, username:"Thaly", password:"123", color: "blue", img: "image/thaly.png"},
+    {id:4, username:"Sophanna", password:"123", color: "blue", img: "image/sana.png"},
 ]
 
-// let icons = [
-//     {id: 1, icon: '😓', sign: '):'},
-//     {id: 2, icon: '😄', sign: '(:'},
-//     {id: 3, icon: '😭', sign: 'cry'},
-//     {id: 4, icon: '🥰', sign: 'love'},
-//     {id: 5, icon: '😷', sign: 'sick'},
-//     {id: 6, icon: '😲', sign: 'wow'},
-//     {id: 7, icon: '😤', sign: 'bore'},
-//     {id: 8, icon: '🥱', sign: 'sleep'},
-//     {id: 9, icon: '😋', sign: 'haha'},
-//     {id: 10, icon: '🤬', sign: 'angry'},
-// ]
-// app.get('/emoji', (req, res) => res.send(icons));
 
 app.get('/message', (req, res)=>{res.send(message)});
 

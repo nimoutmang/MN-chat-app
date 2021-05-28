@@ -51,3 +51,29 @@ body{
     color:#fff;
     font-size: 20px;
 }
+.profile {
+    display: flex;
+}
+#myImage {
+    border-radius: 80px;
+    margin-right: 10px;
+}
+#my_name {
+    margin-top: 20px;
+    color: white;
+}
+#emoji-btn{
+    outline: none;
+    border: none;
+}
+#bolder #italic, #underline{
+    font-weight: bolder;
+    cursor: pointer;
+}
+#italic{
+    font-style: italic;
+    font-family:'Times New Roman', Times, serif;
+}
+#underline{
+    
+}

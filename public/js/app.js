@@ -1,5 +1,9 @@
+//=======displayMessage=========//
+
 function displayMessage(response) {
     let users = response.data;
+    let my_name = document.querySelector('#my_name');
+    my_name.textContent = localStorage.getItem('username');
     const main = document.querySelector('.main');
     const ul = document.querySelector('ul');
     if (ul !== null) {
@@ -31,6 +35,8 @@ function displayMessage(response) {
     }
 }
 
+//=========SaveMessage=========//
+
 function saveMessage() {
     let message = document.querySelector('#message').value;
     let username = localStorage.getItem("username");
@@ -38,25 +44,60 @@ function saveMessage() {
     let today = new Date();
     let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     let user = { username: username, message: message, color: color, time: time };
-    const url = rootEndpoint+ "/message";
-    
+    const url = rootEndpoint + "/message";
+
     axios
         .post(url, user)
         .then(displayMessage);
-    document.querySelector('#message').value= "";
+    document.querySelector('#message').value = "";
 }
 
+//==========addMessage=======//
 function addMessage() {
-    const url =rootEndpoint+ "/message";
+    const url = rootEndpoint + "/message";
     axios
         .get(url)
         .then(displayMessage)
 }
 
+//========logOut========//
+
 function logOut() {
     localStorage.clear();
     window.location.href = rootEndpoint + "/index.html";
 }
+
+//========== emojis =============//
+
+let btnemoji = document.getElementById('emoji-btn');
+const picker = new EmojiButton();
+document.addEventListener('DOMContentLoaded', () => {
+    picker.on('emoji', emoji => {
+        document.querySelector('#message').value += emoji;
+    });
+    btnemoji.addEventListener('click', () => {
+        picker.togglePicker(btnemoji);
+    });
+});
+
+
+function search (){
+    let text= searchBook.value.toLowerCase(); 
+    let listUser = document.querySelectorAll('.img');
+    for (let li of listUser){
+        let title =li.firstElementChild.textContent.toLowerCase();
+        if (title.indexOf(text)===-1){
+            li.style.display = 'none';
+        }else {
+           li.style.display = "";
+        }
+    }
+}
+
+
+
+
+
 // const btnLogin = document.querySelector('#bolder')
 // btnLogin.addEventListener('click',displaytext);
 
@@ -64,43 +105,15 @@ const btnshow = document.querySelector('#btn-exit')
 const rootEndpoint = "http://localhost:5000";
 btnshow.addEventListener('click', logOut);
 
-const btnLogin = document.querySelector('#send')
+const btnLogin = document.querySelector('#send') 
 btnLogin.addEventListener('click', saveMessage);
+
+const btnsearch = document.querySelector('#search')
+btnsearch.addEventListener("keyup", search)
 
 let isLogined = localStorage.length > 0;
 if (isLogined) {
     setInterval(addMessage, 1000);
-}else{
+} else {
     window.location.href = rootEndpoint + "/index.html";
 }
-
-
-/// emoji
-loadAllEmoji();
-
-let loadAllEmoji = (e) =>{
-    let emoji = "";
-    for (let i = 128512; i <=  129488; i++){
-
-    }
-}
-let showEmojip = (e) =>{
-    document.getElementById("emoji").removeAttribute("style");
-
-}
-
-let getEmojip = (e) =>{
-    document.getElementById("get-emojis").value += control.innerHTML;
-}
-
-
-
-
-const emojis = document.querySelector("#showEmoji");
-emojis.addEventListener("onclick", showEmojip);
-
-const getEmosji = document.querySelector("#get-emojis");
-getEmojis.addEventListener("onclick", getEmojip);
-
-
-

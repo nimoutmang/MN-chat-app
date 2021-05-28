@@ -6,7 +6,7 @@ let process = (res, username, password) =>{
             window.location.href = rootEndpoint + "/chat.html";
             localStorage.setItem("username",user.username);
             localStorage.setItem("color", user.color);
-            console.log(user.name)
+            
         }else{
             console.log("No");
         }
@@ -16,7 +16,7 @@ let process = (res, username, password) =>{
 let login = (e) =>{
     let username = document.querySelector("#usr").value;
     let password = document.querySelector("#pwd").value;
-    let url = rootEndpoint + "/users"
+    let url = rootEndpoint + "/users";
     axios
         .get(url)
         .then(res => process(res, username, password));
