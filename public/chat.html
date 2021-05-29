@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.1.1/dist/index.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/app.js" defer></script>
 
@@ -18,31 +19,11 @@
     <div class="chat">
         <div class="row">
             <div class="col-3" id="col-3">
-                <img src="image/user.png" alt="" width="100px" height="100px">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-success" type="submit"><i class="fa fa-search"
-                                style="font-size:20px"></i></button>
-                    </div>
-                </div>
-                <div class="img">
-                    <img src="image/user.png" alt="" width="70px" height="70px">
-                    <span id="text">Nimout Mang</span>
-                </div>
-                <div class="img">
-                    <img src="image/user.png" alt="" width="70px" height="70px">
-                    <span id="text">Srey Am</span>
-                </div>
-                <div class="img">
-                    <img src="image/user.png" alt="" width="70px" height="70px">
-                    <span id="text">Vouchly</span>
-                </div>
-                <div class="img">
-                    <img src="image/user.png" alt="" width="70px" height="70px">
-                    <span id="text">Thaly</span>
-                </div>
+                <div class="input-group mb-3" id="profile">
+                   <div class="img">
 
+                   </div>
+                </div>
             </div>
             <div class="col-6">
                 <div class="card" id="card">
@@ -54,12 +35,12 @@
                     <div class="card-footer">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="bolder">B</span>
-                                <span class="input-group-text" id="italic">I</span>
-                                <span class="input-group-text" id="underline">U</span>
-                                <span class="input-group-text" id="emoji">🙂</span>
+                                <button class="input-group-text" id="bolder">B</button>
+                                <button class="input-group-text" id="italic">I</button>
+                                <button class="input-group-text" id="underline">U</button>
                             </div>
                             <input type="text" id="message" class="form-control">
+                            <button id="emoji-btn"> &#127773;</button>
                             <div class="input-group-append">
                                 <button class="btn btn-success" id="send" type="submit">Send</button>
                             </div>
