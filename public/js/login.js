@@ -34,3 +34,5 @@ let ishasLogin = localStorage.length > 0;
 if (ishasLogin){
     window.location.href = "/chat.html"
 }
+
+// https://mn-chat-app.herokuapp.com

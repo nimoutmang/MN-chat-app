@@ -8,7 +8,6 @@ function displayMessage(response) {
     };
     const newul = document.createElement('ul');
     for (let user of users) {
-        console.log(user)
         const li = document.createElement('li');
         const span1 = document.createElement('span');
         const span2 = document.createElement('span');
@@ -57,6 +56,7 @@ function sendMessage() {
     document.querySelector('#message').value = "";
 }
 
+//==========addMessage=======//
 function addMessage() {
     const url = rootEndpoint + "/message";
     axios
