@@ -13,12 +13,12 @@ let login = (e) => {
                 if (user.username === username && user.password === password && !islogin) {
                     localStorage.setItem("name", user.username);
                     localStorage.setItem("color", user.color);
-                    window.location.href = rootEndpoint + "/chat.html";
-                    
+                    islogin = true;
                 } 
             }
-            if(islogin = true){
+            if(islogin){
                 alert("Login success!")
+                window.location.href = rootEndpoint + "/chat.html";
             }else {
                 alert("Password not correct")
             }

@@ -1,4 +1,3 @@
-
 function displayMessage(response) {
     let users = response.data;
     const main = document.querySelector('.main');
@@ -12,12 +11,14 @@ function displayMessage(response) {
         const span1 = document.createElement('span');
         const span2 = document.createElement('span');
         const span3 = document.createElement('span');
+        const name = document.createElement('p');
         const i = document.createElement('i');
         i.className = "fa fa-ellipsis-v";
         i.id = "point";
         i.style.cursor = "pointer";
         i.style.fontSize = 20 + "px";
-        span1.textContent = user.username + " : " + user.message;
+        name.textContent = user.username;
+        span1.textContent =  user.message;
         span3.textContent = user.time;
         span3.style.marginLeft = "80%";
         span1.style.color = "#fff";
@@ -26,9 +27,26 @@ function displayMessage(response) {
         li.style.padding = 15 + "px";
         li.style.justifyContent = "space-between";
         li.style.background = user.color;
+        if(user.bold == "bold"){
+            span1.style.fontWeight = "bold";
+        }else{
+            span1.style.fontWeight = "normal";
+        }
+        if(user.italic == "italic"){
+            span1.style.fontStyle = "italic";
+        }else{
+            
+            span1.style.fontStyle = "normal";
+        }
+        if(user.underline == "underline"){
+            span1.style.textDecoration = "underline";
+        }else{
+            span1.style.textDecoration = "none";
+        }
         span2.appendChild(i);
         li.appendChild(span1);
-        li.appendChild(span2)
+        li.appendChild(span2);
+        newul.appendChild(name);
         newul.appendChild(li);
         newul.appendChild(span3);
         main.appendChild(newul);
@@ -37,25 +55,76 @@ function displayMessage(response) {
 }
 
 function sendMessage() {
-    let message = document.querySelector('#message').value;
     let today = new Date();
     let name = localStorage.getItem("name");
     let color = localStorage.getItem("color");
     let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    let user = { 
+    let user = {
         username: name,
-        message: message, 
-        time: time, 
-        color:color
-        };
-    const url = rootEndpoint + "/message";
+        message: message.value,
+        time: time,
+        color: color,
+        bold: styleBold,
+        italic: styleItalic,
+        underline: styleUnderline
+    };
+    if (message.value !== "") {
+        const url = rootEndpoint + "/message";
+        axios
+            .post(url, user)
+            .then(displayMessage);
+    }
+    message.value = "";
 
-    axios
-        .post(url, user)
-        .then(displayMessage);
-    document.querySelector('#message').value = "";
 }
 
+
+let isBold = true;
+function boldText(){
+    if(message.value !== ""){
+        if(isBold){
+            styleBold = "bold";
+            message.style.fontWeight = styleBold;
+            isBold = false;
+        }else{
+            isBold = true;
+            message.style.fontWeight = "normal"
+            styleBold = "";
+        }
+    }
+}
+let styleBold = "";
+
+let isItalic = true;
+function italicText(){
+    if(message.value !== ""){
+        if(isItalic){
+            styleItalic = "italic";
+            message.style.fontStyle = styleItalic;
+            isItalic = false;
+        }else{
+            isItalic = true;
+            message.style.fontStyle = "normal"
+            styleItalic = "";
+        }
+    }
+}
+let styleItalic = "";
+let isUnderline = true;
+function underlineText() {
+    if(message.value !== ""){
+        if(isUnderline){
+            styleUnderline = "underline";
+            message.style.textDecoration = styleUnderline;
+            isUnderline = false;
+        }else{
+            isUnderline = true;
+            message.style.textDecoration = "none";
+            styleUnderline = "";
+        }
+    }
+}
+let styleUnderline = "";
 //==========addMessage=======//
 function addMessage() {
     const url = rootEndpoint + "/message";
@@ -74,10 +143,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-function showUser(res,username) {
+//
+function showUser(res, username) {
     let image = res.data;
-    for(let pf of image){
-        if(pf.username === username){
+    for (let pf of image) {
+        if (pf.username === username) {
             let userPf = document.createElement('img');
             let text = document.createElement('h2');
             userPf.src = pf.profile;
@@ -92,17 +162,18 @@ function showUser(res,username) {
     }
 }
 
-function getprofile(){
+function getprofile() {
     let name = localStorage.getItem("name");
+    let url = rootEndpoint + "/user"
     axios
-    .get("http://localhost:5000/user")
-    .then(res=>showUser(res,name))
+        .get(url)
+        .then(res => showUser(res, name))
 }
 
 let ishasLogin = localStorage.length > 0;
 if (ishasLogin) {
     setInterval(addMessage, 1000)
-}else{
+} else {
     window.location.href = "/index.html";
 }
 
@@ -123,3 +194,22 @@ const btnLogin = document.querySelector('#send')
 btnLogin.addEventListener('click', sendMessage);
 const images = document.querySelector('.img');
 getprofile();
+
+let message = document.querySelector('#message');
+function isNotstyle() {
+    if(message.value == ""){
+        message.style.fontWeight = "normal";
+        message.style.fontStyle = "normal";
+        message.style.textDecoration = "none";
+        styleBold = "";
+        styleItalic = "";
+        styleUnderline = "";
+    }
+}
+setInterval(isNotstyle, 1000);
+let btnBold = document.querySelector('#bolder');
+let btnItalic = document.querySelector('#italic');
+let btnUnderline = document.querySelector('#underline');
+btnBold.addEventListener('click', boldText);
+btnItalic.addEventListener('click', italicText);
+btnUnderline.addEventListener('click', underlineText);

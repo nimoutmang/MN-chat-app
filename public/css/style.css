@@ -51,26 +51,10 @@ body{
     color:#fff;
     font-size: 20px;
 }
-<<<<<<< HEAD
-
-=======
-.profile {
-    display: flex;
-}
-#myImage {
-    border-radius: 80px;
-    margin-right: 10px;
-}
-#my_name {
-    margin-top: 20px;
-    color: white;
-}
->>>>>>> f0be298ad94aebad56b14f2a1d255ba5874ecef8
 #emoji-btn{
     outline: none;
     border: none;
 }
-<<<<<<< HEAD
 
 .img{
     display: flex;
@@ -87,16 +71,4 @@ h2{
 }
 .form-login{
     margin-left: 40%;
-=======
-#bolder #italic, #underline{
-    font-weight: bolder;
-    cursor: pointer;
-}
-#italic{
-    font-style: italic;
-    font-family:'Times New Roman', Times, serif;
-}
-#underline{
-    
->>>>>>> f0be298ad94aebad56b14f2a1d255ba5874ecef8
 }
