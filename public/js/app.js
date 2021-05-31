@@ -37,7 +37,6 @@ function displayMessage(response) {
         if(user.italic == "italic"){
             span1.style.fontStyle = "italic";
         }else{
-            
             span1.style.fontStyle = "normal";
         }
         if(user.underline == "underline"){
@@ -80,76 +79,13 @@ function sendMessage() {
 
 }
 
-//==========addMessage=======//
+//==========Recieve message=======//
 function addMessage() {
     const url = rootEndpoint + "/message";
     axios
         .get(url)
         .then(displayMessage)
 }
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    picker.on('emoji', emoji => {
-        document.querySelector('#message').value += emoji;
-    });
-    btnemoji.addEventListener('click', () => {
-        picker.togglePicker(btnemoji);
-    });
-});
-
-// add profile and username
-function showUser(res, username) {
-    let image = res.data;
-    for (let pf of image) {
-        if (pf.username === username) {
-            let userPf = document.createElement('img');
-            let text = document.createElement('h2');
-            userPf.src = pf.profile;
-            text.textContent = pf.username;
-            text.style.marginLeft = 10 + "px";
-            userPf.style.width = 70 + "px";
-            userPf.style.height = 70 + "px";
-            userPf.style.borderRadius = 40 + "px";
-            images.appendChild(userPf);
-            images.appendChild(text);
-        }
-    }
-}
-
-function getprofile() {
-    let name = localStorage.getItem("name");
-    let url = rootEndpoint + "/user"
-    axios
-        .get(url)
-        .then(res => showUser(res, name))
-}
-
-// logout
-let ishasLogin = localStorage.length > 0;
-if (ishasLogin) {
-    setInterval(addMessage, 1000)
-} else {
-    window.location.href = "/index.html";
-}
-
-function logOut() {
-    localStorage.clear();
-    window.location.href = rootEndpoint + "/index.html";
-}
-
-
-let btnemoji = document.getElementById('emoji-btn');
-const picker = new EmojiButton();
-
-const btnshow = document.querySelector('#btn-exit')
-const rootEndpoint = "http://localhost:5000";
-btnshow.addEventListener('click', logOut);
-
-const btnLogin = document.querySelector('#send')
-btnLogin.addEventListener('click', sendMessage);
-const images = document.querySelector('.img');
-getprofile();
 
 //bold italic underline
 let isBold = true;
@@ -209,6 +145,66 @@ function isNotstyle() {
         styleUnderline = "";
     }
 }
+
+// add profile and username
+function showUser(res, username) {
+    let image = res.data;
+    for (let pf of image) {
+        if (pf.username === username) {
+            let userPf = document.createElement('img');
+            let text = document.createElement('h2');
+            userPf.src = pf.profile;
+            text.textContent = pf.username;
+            text.style.marginLeft = 10 + "px";
+            userPf.style.width = 70 + "px";
+            userPf.style.height = 70 + "px";
+            userPf.style.borderRadius = 40 + "px";
+            images.appendChild(userPf);
+            images.appendChild(text);
+        }
+    }
+}
+function getprofile() {
+    let name = localStorage.getItem("name");
+    let url = rootEndpoint + "/user"
+    axios
+        .get(url)
+        .then(res => showUser(res, name))
+}
+
+// logout
+let ishasLogin = localStorage.length > 0;
+if (ishasLogin) {
+    setInterval(addMessage, 1000)
+} else {
+    window.location.href = "/index.html";
+}
+
+function logOut() {
+    localStorage.clear();
+    window.location.href = rootEndpoint + "/index.html";
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    picker.on('emoji', emoji => {
+        document.querySelector('#message').value += emoji;
+    });
+    btnemoji.addEventListener('click', () => {
+        picker.togglePicker(btnemoji);
+    });
+});
+
+let btnemoji = document.getElementById('emoji-btn');
+const picker = new EmojiButton();
+
+const btnshow = document.querySelector('#btn-exit')
+const rootEndpoint = "https://mn-chat-app.herokuapp.com";
+btnshow.addEventListener('click', logOut);
+
+const btnLogin = document.querySelector('#send')
+btnLogin.addEventListener('click', sendMessage);
+const images = document.querySelector('.img');
+
 setInterval(isNotstyle, 1000);
 let btnBold = document.querySelector('#bolder');
 let btnItalic = document.querySelector('#italic');
@@ -216,3 +212,4 @@ let btnUnderline = document.querySelector('#underline');
 btnBold.addEventListener('click', boldText);
 btnItalic.addEventListener('click', italicText);
 btnUnderline.addEventListener('click', underlineText);
+getprofile();
